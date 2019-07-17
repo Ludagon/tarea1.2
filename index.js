@@ -31,22 +31,22 @@ async function getData() {
         await page.waitFor('tbody tbody tbody tbody tbody tbody tbody tr:nth-child(1) > td:nth-child(3) b');
         let details = await page.evaluate(() => {
             return {
-                name: document.querySelector('tbody tbody tbody tbody tbody tbody tbody tr:nth-child(1) > td:nth-child(3) b').innerText,
-                adress: document.querySelector('tbody tbody tbody tbody tbody tbody tbody tr:nth-child(3) > td:nth-child(3) b').innerText,
-                country: document.querySelector('tbody tbody tbody tbody tbody tbody tbody tr:nth-child(4) > td:nth-child(3) b').innerText,
-                malling: document.querySelector('tbody tbody tbody tbody tbody tbody tbody tr:nth-child(6) > td:nth-child(3) b').innerText,
-                locations: document.querySelector('tbody tbody tbody tbody tbody tbody tbody tr:nth-child(8) > td:nth-child(3) b').innerText,
-                type: document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(1)> td:nth-child(3) b').innerText,
-                rank: document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(2)> td:nth-child(3) b').innerText,
-                number: document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(3)> td:nth-child(3) b').innerText,
-                status: document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(4)> td:nth-child(3) b').innerText,
-                date: document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(5)> td:nth-child(3) b').innerText,
-                expires: document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(6)> td:nth-child(3) b').innerText,
-                sent: document.querySelector('tbody  tbody tbody  tbody  tbody tbody tbody tbody tbody > tr:nth-child(1) > td:nth-child(3) b').innerText
+                name: document.querySelector('tbody tbody tbody tbody tbody tbody tbody tr:nth-child(1) > td:nth-child(3) b') ? document.querySelector('tbody tbody tbody tbody tbody tbody tbody tr:nth-child(1) > td:nth-child(3) b').innerText : false,
+                adress: document.querySelector('tbody tbody tbody tbody tbody tbody tbody tr:nth-child(3) > td:nth-child(3) b') ? document.querySelector('tbody tbody tbody tbody tbody tbody tbody tr:nth-child(3) > td:nth-child(3) b').innerText : false,
+                country: document.querySelector('tbody tbody tbody tbody tbody tbody tbody tr:nth-child(4) > td:nth-child(3) b') ? document.querySelector('tbody tbody tbody tbody tbody tbody tbody tr:nth-child(4) > td:nth-child(3) b').innerText : false,
+                malling: document.querySelector('tbody tbody tbody tbody tbody tbody tbody tr:nth-child(6) > td:nth-child(3) b') ? document.querySelector('tbody tbody tbody tbody tbody tbody tbody tr:nth-child(6) > td:nth-child(3) b').innerText : false,
+                locations: document.querySelector('tbody tbody tbody tbody tbody tbody tbody tr:nth-child(8) > td:nth-child(3) b') ? document.querySelector('tbody tbody tbody tbody tbody tbody tbody tr:nth-child(8) > td:nth-child(3) b').innerText : false,
+                type: document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(1)> td:nth-child(3) b') ? document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(1)> td:nth-child(3) b').innerText : false,
+                rank: document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(2)> td:nth-child(3) b') ? document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(2)> td:nth-child(3) b').innerText : false,
+                number: document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(3)> td:nth-child(3) b') ? document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(3)> td:nth-child(3) b').innerText : false,
+                status: document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(4)> td:nth-child(3) b') ? document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(4)> td:nth-child(3) b').innerText : false,
+                date: document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(5)> td:nth-child(3) b') ? document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(5)> td:nth-child(3) b').innerText : false,
+                expires: document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(6)> td:nth-child(3) b') ? document.querySelector('tbody tbody tbody tbody tbody > tr > td > table:nth-child(3) > tbody > tr > td > table:nth-child(2) > tbody > tr:nth-child(6)> td:nth-child(3) b').innerText : false,
+                sent: document.querySelector('tbody  tbody tbody  tbody  tbody tbody tbody tbody tbody > tr:nth-child(1) > td:nth-child(3) b') ? document.querySelector('tbody  tbody tbody  tbody  tbody tbody tbody tbody tbody > tr:nth-child(1) > td:nth-child(3) b').innerText : false
             }
         })
         allData.push(details);
-        console.log(details, i);
     }
+    //Gettings errors and idk why :-) 
     console.log(allData);
 })();
