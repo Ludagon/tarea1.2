@@ -19,12 +19,12 @@ async function getData() {
 
 
 (async() => {
-    const browser = await puppeteer.launch({
+    let browser = await puppeteer.launch({
         headless: true,
         devtools: true
     });
-    var Data = await getData();
-    const page = await browser.newPage();
+    const Data = await getData();
+    let page = await browser.newPage();
     var allData = [];
     for (let i = 0; i < Data.data.links.length; i++) {
         await page.goto(Data.data.links[i]);
@@ -46,7 +46,7 @@ async function getData() {
             }
         })
         allData.push(details);
+        console.log(details, i);
     }
-
     console.log(allData);
 })();
